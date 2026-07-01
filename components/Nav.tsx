@@ -13,6 +13,7 @@ export default function Nav() {
         justifyContent: "space-between",
         paddingTop: "var(--gd-header-top)",
         paddingBottom: 0,
+        height: 32,
       }}
     >
       <Link href="/" aria-label="Home" style={{ display: "block" }}>
