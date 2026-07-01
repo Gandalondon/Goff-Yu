@@ -3,7 +3,6 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
-import BackToTop from "@/components/BackToTop";
 import StoryblokProvider from "@/components/StoryblokProvider";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300", "400"] });
@@ -38,8 +37,7 @@ export default function RootLayout({
         <StoryblokProvider>
           <Nav />
           {children}
-          <BackToTop />
-          <Analytics />
+<Analytics />
         </StoryblokProvider>
       </body>
     </html>

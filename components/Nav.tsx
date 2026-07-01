@@ -15,10 +15,10 @@ export default function Nav() {
         paddingBottom: 0,
       }}
     >
-      <Link href="/" aria-label="Ganda — home" style={{ display: "block" }}>
+      <Link href="/" aria-label="Home" style={{ display: "block" }}>
         <Image
           src="/logo-mark.svg"
-          alt="Ganda"
+          alt="Logo"
           width={32}
           height={32}
           priority
@@ -43,7 +43,7 @@ export default function Nav() {
           </li>
           <li>
             <a
-              href="https://cal.com/tony-goff-yu-an7khw/intro"
+              href="https://cal.com/vanessa-goff-yu-j7laxh/intro"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book a call (opens in new tab)"

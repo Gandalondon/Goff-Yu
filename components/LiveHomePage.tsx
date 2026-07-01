@@ -1,24 +1,6 @@
 "use client";
 
-import { useStoryblokState } from "@storyblok/react";
-import WorkGrid from "@/components/WorkGrid";
-import type { WorkProject } from "@/lib/storyblok";
-
-export default function LiveHomePage({
-  story: initialStory,
-  projects,
-}: {
-  story: unknown;
-  projects: WorkProject[];
-}) {
-  const story = useStoryblokState(initialStory as never);
-  const content =
-    (story as { content?: Record<string, unknown> })?.content ?? {};
-
-  const heroText =
-    (content.hero_text as string) ??
-    "Hello, I'm Tony Goff-Yu. I have over twenty years of design experience across branding, user experience and interaction design. I help businesses improve customer experience and conversion. This is my work.";
-
+export default function LiveHomePage() {
   return (
     <main className="gd-container" style={{ paddingBottom: 144 }}>
       <h1
@@ -34,10 +16,8 @@ export default function LiveHomePage({
           textWrap: "pretty",
         }}
       >
-        {heroText}
+        Hello, we&rsquo;re Goff-Yu. Together we help organisations build stronger brands, products and digital experiences through strategy, design and marketing.
       </h1>
-
-      <WorkGrid projects={projects} />
     </main>
   );
 }

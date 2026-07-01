@@ -1,43 +1,62 @@
-import { getStory, getWorkProjects } from "@/lib/storyblok";
-import WorkGrid from "@/components/WorkGrid";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About — Ganda",
-  description: "Tony Goff-Yu — product design, strategy and digital experience.",
+  title: "About",
+  description: "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing.",
 };
 
-const DEFAULT_BIO =
-  "Studio introduction goes here. A short statement describing the studio or individual, the focus of the work and the approach taken.\n\nA second paragraph with more detail — the kinds of clients, sectors or disciplines covered, and the way projects are typically run.\n\nA closing line, for example an invitation to get in touch about new work.";
+const BIO =
+  "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing. Together we bring over 35 years of experience working with startups, agencies and global organisations, combining product design, research, marketing strategy, communications and creative campaigns to help businesses connect with customers and achieve measurable results.";
 
-const DEFAULT_CLIENTS = [
-  "Client Name",
-  "Client Name",
-  "Client Name",
-  "Client Name",
-  "Client Name",
-  "Client Name",
+const EXPERTISE = [
+  "Product Design",
+  "Product Strategy",
+  "Marketing Strategy",
+  "Digital Marketing",
+  "Brand Strategy",
+  "UX Research",
+  "Experimentation",
+  "Conversion Optimisation",
+  "Communications & PR",
+  "Content Strategy",
+  "Campaign Planning",
+  "Creative Direction",
+  "Partnerships & Outreach",
+  "AI Workflows",
 ];
 
-export default async function AboutPage() {
-  const [story, projects] = await Promise.all([
-    getStory("about").catch(() => null),
-    getWorkProjects().catch(() => []),
-  ]);
-  const content = story?.content ?? {};
+const CLIENTS = [
+  "Google",
+  "BMW",
+  "Sony",
+  "McLaren",
+  "General Motors",
+  "Toyota",
+  "FINN",
+  "McKinsey & Company",
+  "Ernst & Young",
+  "Dentsu",
+  "Publicis Media",
+  "Mindshare",
+  "Xaxis",
+  "Kin + Carta",
+  "Kairos Group",
+  "Codemasters",
+  "Twitch",
+  "Takumi",
+  "Barclays",
+  "NatWest",
+  "BP",
+  "Shell",
+  "Adidas",
+  "Gap",
+  "BADU",
+];
 
-  const bio = (content.bio as string) || DEFAULT_BIO;
-  const clients: string[] = (content.clients as string)
-    ? (content.clients as string).split("\n").filter(Boolean)
-    : DEFAULT_CLIENTS;
-
+export default function AboutPage() {
   return (
     <main style={{ paddingBottom: 144 }}>
-      {/* Title — full width, above the split */}
-      <div
-        className="gd-container"
-        style={{ paddingTop: 128, paddingBottom: 0 }}
-      >
+      <div className="gd-container" style={{ paddingTop: 128, paddingBottom: 0 }}>
         <div className="gd-split" style={{ gap: 24 }}>
           <h1
             style={{
@@ -50,7 +69,7 @@ export default async function AboutPage() {
             About
           </h1>
           <div>
-            {bio.split("\n\n").map((para, i) => (
+            {BIO.split("\n\n").map((para, i) => (
               <p
                 key={i}
                 style={{
@@ -69,7 +88,6 @@ export default async function AboutPage() {
         </div>
       </div>
 
-      {/* Row 2: Expertise label left, list right */}
       <div className="gd-container" style={{ marginTop: 96 }}>
         <div className="gd-split" style={{ gap: 24 }}>
           <h2
@@ -84,14 +102,7 @@ export default async function AboutPage() {
             Expertise
           </h2>
           <div className="gd-clients">
-            {[
-              "Product Design",
-              "Product Strategy",
-              "UX Research",
-              "Experimentation",
-              "Conversion Optimisation",
-              "AI Workflows",
-            ].map((item, i) => (
+            {EXPERTISE.map((item, i) => (
               <p
                 key={i}
                 style={{
@@ -108,7 +119,6 @@ export default async function AboutPage() {
         </div>
       </div>
 
-      {/* Row 3: Clients label left, client list right */}
       <div className="gd-container" style={{ marginTop: 96 }}>
         <div className="gd-split" style={{ gap: 24 }}>
           <h2
@@ -123,7 +133,7 @@ export default async function AboutPage() {
             Clients
           </h2>
           <div className="gd-clients">
-            {clients.map((c, i) => (
+            {CLIENTS.map((c, i) => (
               <p
                 key={i}
                 style={{
@@ -138,11 +148,6 @@ export default async function AboutPage() {
             ))}
           </div>
         </div>
-      </div>
-
-      {/* Work grid */}
-      <div className="gd-container" style={{ marginTop: 200 }}>
-        <WorkGrid projects={projects} />
       </div>
     </main>
   );
