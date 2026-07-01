@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+:root {
+  --gd-gutter: 80px;
+  --gd-header-top: 80px;
+  --black: #231f20;
+  --white: #ffffff;
+  --grey-50: #f6f6f6;
+  --grey-200: #e2e2e2;
+  --grey-400: #a8a8a8;
+  --grey-500: #7c7a7b;
+  --grey-700: #3a3738;
+
+  --ink: #231f20;
+  --ink-muted: #7c7a7b;
+  --ink-subtle: #a8a8a8;
+  --surface: #ffffff;
+  --surface-raised: #f6f6f6;
+  --border: #e2e2e2;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: var(--surface);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--ink);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gd-skeleton {
+    animation: none;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+@keyframes gd-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.gd-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--grey-50) 25%,
+    var(--grey-200) 50%,
+    var(--grey-50) 75%
+  );
+  background-size: 200% 100%;
+  animation: gd-shimmer 1.5s infinite;
+}
+
+
+/* Centred content container */
+.gd-container {
+  max-width: 1680px;
+  margin: 0 auto;
+  padding-left: var(--gd-gutter);
+  padding-right: var(--gd-gutter);
+  box-sizing: border-box;
+}
+
+/* Client list — 2 columns on desktop, 1 on mobile */
+.gd-clients {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .gd-clients {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Grid and split layout helpers */
+.gd-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 24px;
+  row-gap: 24px;
+}
+
+.gd-split {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Back to top — desktop only */
+@media (max-width: 1024px) {
+  .gd-back-to-top {
+    display: none;
+  }
+}
+
+/* Tablet (<1024px) — reduce gutters, stack grids */
+@media (max-width: 1024px) {
+  :root {
+    --gd-gutter: 48px;
+    --gd-header-top: 48px;
+  }
+
+  main {
+    padding-bottom: 120px !important;
+  }
+
+  .gd-grid-3 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .gd-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Mobile (<640px) — single column, tighter gutters */
+@media (max-width: 640px) {
+  :root {
+    --gd-gutter: 24px;
+    --gd-header-top: 24px;
+  }
+
+  main {
+    padding-bottom: 96px !important;
+  }
+
+  .gd-grid-3 {
+    grid-template-columns: 1fr !important;
+  }
+
+  .gd-split {
+    gap: 32px;
+  }
+}
