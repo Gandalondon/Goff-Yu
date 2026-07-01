@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Goff-Yu",
   description: "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing.",
 };
 

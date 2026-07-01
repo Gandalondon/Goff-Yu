@@ -3,26 +3,25 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
-import StoryblokProvider from "@/components/StoryblokProvider";
 
 const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300", "400"] });
 
 export const metadata: Metadata = {
-  title: "Ganda — Tony Goff-Yu",
-  description: "Design, branding and digital experience.",
-  metadataBase: new URL("https://gandalondon.com"),
+  title: "Goff-Yu",
+  description: "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing.",
+  metadataBase: new URL("https://goff-yu.com"),
   openGraph: {
-    title: "Ganda — Tony Goff-Yu",
-    description: "Design, branding and digital experience.",
-    url: "https://gandalondon.com",
-    siteName: "Ganda",
+    title: "Goff-Yu",
+    description: "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing.",
+    url: "https://goff-yu.com",
+    siteName: "Goff-Yu",
     locale: "en_GB",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "Ganda — Tony Goff-Yu",
-    description: "Design, branding and digital experience.",
+    title: "Goff-Yu",
+    description: "Goff-Yu helps organisations build stronger brands, products and digital experiences through strategy, design and marketing.",
   },
 };
 
@@ -34,11 +33,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.className}>
       <body>
-        <StoryblokProvider>
-          <Nav />
-          {children}
-<Analytics />
-        </StoryblokProvider>
+        <Nav />
+        {children}
+        <Analytics />
       </body>
     </html>
   );

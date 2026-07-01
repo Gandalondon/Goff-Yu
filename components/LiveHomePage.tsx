@@ -16,7 +16,7 @@ export default function LiveHomePage() {
           textWrap: "pretty",
         }}
       >
-        Hello, we&rsquo;re Goff-Yu. Together we help organisations build stronger brands, products and digital experiences through strategy, design and marketing.
+        We&rsquo;re Tony and Vanessa Goff-Yu. Together we combine product design, business consultancy and AI-assisted workflows to help organisations solve complex problems and deliver practical outcomes.
       </h1>
     </main>
   );
