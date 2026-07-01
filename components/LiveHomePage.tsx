@@ -16,7 +16,7 @@ export default function LiveHomePage() {
           textWrap: "pretty",
         }}
       >
-        We&rsquo;re Tony and Vanessa Goff-Yu. Together we combine product design, business consultancy and AI-assisted workflows to help organisations solve complex problems and deliver practical outcomes.
+        We&rsquo;re Tony and Vanessa Goff-Yu, combining product design and business consultancy to help organisations build better digital products and customer experiences.
       </h1>
     </main>
   );
