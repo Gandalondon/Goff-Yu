@@ -61,7 +61,7 @@ export default function AboutPage() {
           <h1
             style={{
               fontSize: "var(--type-display)",
-              fontWeight: 500,
+              fontWeight: 450,
               letterSpacing: "-0.006em",
               lineHeight: 1.15,
             }}
@@ -93,7 +93,7 @@ export default function AboutPage() {
           <h2
             style={{
               fontSize: "var(--type-display)",
-              fontWeight: 500,
+              fontWeight: 450,
               letterSpacing: "-0.006em",
               lineHeight: 1.15,
               color: "var(--ink)",
@@ -124,7 +124,7 @@ export default function AboutPage() {
           <h2
             style={{
               fontSize: "var(--type-display)",
-              fontWeight: 500,
+              fontWeight: 450,
               letterSpacing: "-0.006em",
               lineHeight: 1.15,
               color: "var(--ink)",

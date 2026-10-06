@@ -4,7 +4,8 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
 
-const dmSans = DM_Sans({ subsets: ["latin"], weight: ["300", "400", "500"] });
+// Variable font: allows in-between weights (headings use 450)
+const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Goff-Yu",

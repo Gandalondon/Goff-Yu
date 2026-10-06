@@ -10,7 +10,7 @@ export default function LiveHomePage() {
           marginBottom: 128,
           fontSize: "var(--type-display)",
           lineHeight: 1.2,
-          fontWeight: 500,
+          fontWeight: 450,
           letterSpacing: "-0.006em",
           color: "var(--ink)",
           textWrap: "pretty",

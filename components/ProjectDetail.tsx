@@ -78,7 +78,7 @@ export default function ProjectDetail({
                   <h2
                     style={{
                       fontSize: "var(--type-display)",
-                      fontWeight: 500,
+                      fontWeight: 450,
                       letterSpacing: "-0.006em",
                       lineHeight: 1.15,
                       marginBottom: 24,
