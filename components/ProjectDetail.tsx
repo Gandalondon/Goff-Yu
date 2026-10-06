@@ -77,10 +77,10 @@ export default function ProjectDetail({
                 {block.Title && (
                   <h2
                     style={{
-                      fontSize: "clamp(1.5rem, 2.6vw, 2rem)",
-                      fontWeight: 400,
-                      letterSpacing: "1px",
-                      lineHeight: 1.25,
+                      fontSize: "var(--type-display)",
+                      fontWeight: 500,
+                      letterSpacing: "-0.006em",
+                      lineHeight: 1.15,
                       marginBottom: 24,
                     }}
                   >
@@ -92,9 +92,9 @@ export default function ProjectDetail({
                     <p
                       key={j}
                       style={{
-                        fontSize: 18,
+                        fontSize: "var(--type-body)",
                         fontWeight: 300,
-                        lineHeight: 1.5,
+                        lineHeight: 1.45,
                         marginBottom: "1em",
                         textWrap: "pretty",
                       }}
