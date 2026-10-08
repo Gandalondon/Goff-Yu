@@ -3,6 +3,7 @@ import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import Nav from "@/components/Nav";
+import ScrollToTop from "@/components/ScrollToTop";
 
 // Variable font: allows in-between weights (headings use 450)
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -34,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.className}>
       <body>
+        <ScrollToTop />
         <Nav />
         {children}
         <Analytics />
